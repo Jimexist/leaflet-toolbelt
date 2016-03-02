@@ -1,6 +1,6 @@
 {
   "name": "leaflet-toolbelt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "leaflet toolbelt",
   "main": "lib/index.js",
   "peerDependencies": {

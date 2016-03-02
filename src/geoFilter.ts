@@ -1,12 +1,13 @@
 /// <reference path="./geolib.d.ts" />
+/// <reference path="../typings/main.d.ts" />
 
-import { Point, isPointInCircle, isPointInside } from "geolib";
+import geolib from "geolib";
 
 export interface LatLngFilter {
   (latLng: L.LatLng): boolean;
 }
 
-function convertPoint(latLng: L.LatLng): Point {
+function convertPoint(latLng: L.LatLng): geolib.Point {
   return {
     latitude: latLng.lat,
     longitude: latLng.lng
@@ -28,12 +29,12 @@ function getLayerType(layer: L.ILayer): string {
 export function leafletLayerToLatLngFilter(layer: L.ILayer, layerType: string = getLayerType(layer)): LatLngFilter {
   if (layerType === "circle") {
     const circle: L.Circle = <L.Circle>layer;
-    return (latLng: L.LatLng) => isPointInCircle(convertPoint(latLng),
+    return (latLng: L.LatLng) => geolib.isPointInCircle(convertPoint(latLng),
       convertPoint(circle.getLatLng()),
       circle.getRadius());
   } else if (layerType === "rectangle" || layerType === "polygon") {
     const polygon: L.Polygon = <L.Polygon>layer;
-    return (latLng: L.LatLng) => isPointInside(convertPoint(latLng), polygon.getLatLngs().map(convertPoint));
+    return (latLng: L.LatLng) => geolib.isPointInside(convertPoint(latLng), polygon.getLatLngs().map(convertPoint));
   } else {
     // possibly polyline or marker, which should always return false
     return () => false;
