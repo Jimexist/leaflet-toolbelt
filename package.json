@@ -3,14 +3,25 @@
   "version": "0.0.1",
   "description": "leaflet toolbelt",
   "main": "lib/index.js",
-  "dependencies": {},
+  "peerDependencies": {
+    "geolib": "^2.0.18"
+  },
+  "files": [
+    "lib/"
+  ],
   "devDependencies": {
     "babel-register": "^6.6.0",
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "leaflet": "^0.7.7",
+    "mocha": "^2.4.5",
+    "tslint": "^3.5.0"
   },
   "scripts": {
-    "test": "mocha"
+    "clean": "rm -r ./lib",
+    "lint": "./node_modules/.bin/tslint src/*.ts",
+    "build": "tsc",
+    "test": "mocha",
+    "watch": "npm run build -- --watch"
   },
   "repository": {
     "type": "git",
