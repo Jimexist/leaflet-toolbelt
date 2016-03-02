@@ -1,0 +1,29 @@
+{
+  "name": "leaflet-toolbelt",
+  "version": "0.0.1",
+  "description": "leaflet toolbelt",
+  "main": "lib/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-register": "^6.6.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimexist/leaflet-toolbelt.git"
+  },
+  "keywords": [
+    "leaflet",
+    "toolbelt"
+  ],
+  "author": "Jiayu Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jimexist/leaflet-toolbelt/issues"
+  },
+  "homepage": "https://github.com/Jimexist/leaflet-toolbelt#readme"
+}
