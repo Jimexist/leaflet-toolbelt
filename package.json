@@ -22,7 +22,7 @@
     "clean": "rm -r ./lib",
     "lint": "./node_modules/.bin/tslint src/*.ts",
     "build": "tsc",
-    "test": "mocha",
+    "test": "npm run build && mocha",
     "watch": "npm run build -- --watch"
   },
   "repository": {
