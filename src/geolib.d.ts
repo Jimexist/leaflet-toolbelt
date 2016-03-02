@@ -1,6 +1,5 @@
 // this is to (incompletely) annotate https://github.com/manuelbieh/Geolib
-
-declare module geolib {
+declare namespace geolib {
 
   export interface Point {
     latitude: number;
@@ -14,5 +13,5 @@ declare module geolib {
 }
 
 declare module "geolib" {
-  export default geolib;
+  export = geolib;
 }

@@ -1,7 +1,6 @@
 /// <reference path="./geolib.d.ts" />
 /// <reference path="../typings/main.d.ts" />
-
-import geolib from "geolib";
+import * as geolib from "geolib";
 
 export interface LatLngFilter {
   (latLng: L.LatLng): boolean;
@@ -50,5 +49,5 @@ export function leafletLayerGroupToLatLngFilter<T extends L.ILayer>(layerGroup: 
       }
     }
     return false;
-  }
+  };
 }
