@@ -11,8 +11,4 @@ declare module "geolib" {
 
   function isPointInCircle(p: Point, center: Point, radius: number): boolean;
 
-  export default {
-    isPointInside,
-    isPointInCircle,
-  }
 }
