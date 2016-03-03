@@ -18,7 +18,8 @@
     "leaflet": "^0.7.7",
     "mocha": "^2.4.5",
     "mocha-jsdom": "^1.1.0",
-    "tslint": "^3.5.0"
+    "tslint": "^3.5.0",
+    "typescript": "^1.8.7"
   },
   "scripts": {
     "clean": "rm -r ./lib",
