@@ -1,6 +1,10 @@
 /// <reference path="./geolib.d.ts" />
 /// <reference path="../typings/main.d.ts" />
 import * as geolib from "geolib";
+// we include leaflet here but we do not set that as peer deps
+// because although leaflet is available in npm
+// many of its plugins are not npm friendly
+declare var L;
 
 export interface LatLngFilter {
   (latLng: L.LatLng): boolean;
@@ -30,10 +34,11 @@ export function leafletLayerToLatLngFilter(layer: L.ILayer, layerType: string = 
     const circle: L.Circle = <L.Circle>layer;
     return (latLng: L.LatLng) => geolib.isPointInCircle(convertPoint(latLng),
       convertPoint(circle.getLatLng()),
-      circle.getRadius());
+      circle.getRadius()); // note in meters
   } else if (layerType === "rectangle" || layerType === "polygon") {
     const polygon: L.Polygon = <L.Polygon>layer;
-    return (latLng: L.LatLng) => geolib.isPointInside(convertPoint(latLng), polygon.getLatLngs().map(convertPoint));
+    return (latLng: L.LatLng) => geolib.isPointInside(convertPoint(latLng),
+      polygon.getLatLngs().map(convertPoint));
   } else {
     // possibly polyline or marker, which should always return false
     return () => false;

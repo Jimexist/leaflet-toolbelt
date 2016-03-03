@@ -1,6 +1,7 @@
 /// <reference path="../typings/main.d.ts" />
-import { leafletLayerToLatLngFilter, LatLngFilter } from "./geoFilter";
+import { leafletLayerToLatLngFilter, leafletLayerGroupToLatLngFilter, LatLngFilter } from "./geoFilter";
 
-export default {
+export = {
   leafletLayerToLatLngFilter,
+  leafletLayerGroupToLatLngFilter,
 };

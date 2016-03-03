@@ -1,3 +1,5 @@
 --compilers js:babel-register
 --reporter spec
+--colors
+--growl
 --recursive

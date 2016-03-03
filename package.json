@@ -1,6 +1,6 @@
 {
   "name": "leaflet-toolbelt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "leaflet toolbelt",
   "main": "lib/index.js",
   "peerDependencies": {
@@ -14,8 +14,10 @@
     "babel-register": "^6.6.0",
     "chai": "^3.5.0",
     "geolib": "^2.0.18",
+    "jsdom": "^8.1.0",
     "leaflet": "^0.7.7",
     "mocha": "^2.4.5",
+    "mocha-jsdom": "^1.1.0",
     "tslint": "^3.5.0"
   },
   "scripts": {
